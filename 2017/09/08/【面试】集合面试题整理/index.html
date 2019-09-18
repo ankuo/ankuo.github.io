@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>【面试】集合面试题整理 | 岸阔</title><meta name="description" content="【面试】集合面试题整理"><meta name="keywords" content="面试"><meta name="author" content="ankuo"><meta name="copyright" content="ankuo"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://yoursite.com/2017/09/08/【面试】集合面试题整理/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="【面试】集合面试题整理"><meta name="twitter:description" content="【面试】集合面试题整理"><meta name="twitter:image" content="https://s2.ax1x.com/2019/09/18/nHxh7j.jpg"><meta property="og:type" content="article"><meta property="og:title" content="【面试】集合面试题整理"><meta property="og:url" content="http://yoursite.com/2017/09/08/【面试】集合面试题整理/"><meta property="og:site_name" content="岸阔"><meta property="og:description" content="【面试】集合面试题整理"><meta property="og:image" content="https://s2.ax1x.com/2019/09/18/nHxh7j.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="【面试】IO框架面试题整理" href="http://yoursite.com/2017/09/15/【面试】IO框架面试题整理/"><link rel="next" title="【面试】常见基础面试题整理" href="http://yoursite.com/2017/09/08/【面试】常见基础面试题整理/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'true',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Collection"><span class="toc-number">1.</span> <span class="toc-text">Collection</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.1.</span> <span class="toc-text">List</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set"><span class="toc-number">1.2.</span> <span class="toc-text">Set</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collections工具类"><span class="toc-number">1.3.</span> <span class="toc-text">Collections工具类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Map"><span class="toc-number">2.</span> <span class="toc-text">Map</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ConcurrentHashMap"><span class="toc-number">3.</span> <span class="toc-text">ConcurrentHashMap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ConcurrentHashMap分析"><span class="toc-number">3.1.</span> <span class="toc-text">ConcurrentHashMap分析</span></a></li></ol></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://s2.ax1x.com/2019/09/18/nHxh7j.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">岸阔</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><div class="menu_mask"></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item text-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item text-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">3</div></a></div></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">【面试】集合面试题整理</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2017-09-08<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> Updated 2019-09-18</time></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><blockquote>
+<p>Collection接口是所以集合的根，然后扩展了三大类集合，分别是：</p>
+</blockquote>
+<ul>
+<li>List，也就是有序集合，它方便的提供了访问，插入，删除等操作。</li>
+<li>Set，不允许出现重复的元素，这是和List最明显的区别。</li>
+<li>Queue/Deque，这是java提供的标准对类结构的实现，除了集合的基本功能，还支持FILO，LIFO</li>
+</ul>
+<p>​       每种集合和通用逻辑都会被抽象到对应的抽象类之中，比如AbstractList就集中类各种List操作的通用部分，这些集合不是完全孤立的，比如LinkedList本身即是List又是Deque</p>
+<p>​       其实，TreeSet 代码里实际默认是利用TreeMap 实现的，Java类库创建了一个Dummy对象“PRESENT”作为value，然后所有插入的元素其实是以 键的形式放入了TreeMap 里面;同理，HashSet其实也是以HashMap为基础实现的，原来他们只是Map类的马甲!</p>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><blockquote>
+<p>对比Vector、ArrayList、LinkedList有何区别?</p>
+</blockquote>
+<p>三者都是实现了集合框架的List，也就是所谓的有序集合，因此可根据不同的角度去看他们的区别</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>线程安全</th>
+<th>随机访问的场合</th>
+<th>插入，删除</th>
+<th>底层的实现</th>
+<th>扩容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArrayList</td>
+<td>否</td>
+<td>快</td>
+<td>慢</td>
+<td>数组</td>
+<td>扩50%</td>
+</tr>
+<tr>
+<td>LinkedList</td>
+<td>否</td>
+<td>慢</td>
+<td>快</td>
+<td>双向链表</td>
+<td>不需要</td>
+</tr>
+<tr>
+<td>Vector</td>
+<td>是</td>
+<td>快</td>
+<td>慢</td>
+<td>数组</td>
+<td>扩100%</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>常见的典型的排序算法</p>
+</blockquote>
+<ul>
+<li>内部排序：归并排序，交换排序（冒泡，快排），选择排序，插入排序等。</li>
+<li>外部排序：利用内存和外部存储处理超大数据集</li>
+</ul>
+<p>注意：1.那些是不稳定的排序；2.稳定意外着什么；3.对于不同的数据集各种排序有什么优劣势；4.可以从某个角度去进一步优化排序（空间占用，业务场景需要的最小辅助空间）</p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>是否有序</th>
+<th>添加删除包含效率</th>
+<th>底层实现</th>
+<th>线程安全</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TreeSet</td>
+<td>自然顺序</td>
+<td>log(n)</td>
+<td>TreeMap</td>
+<td>否</td>
+</tr>
+<tr>
+<td>HashSet</td>
+<td>无序</td>
+<td>常数时间</td>
+<td>HashMap</td>
+<td>否</td>
+</tr>
+<tr>
+<td>LinkedHashSet</td>
+<td>有序</td>
+<td>常数时间(略低于HashSet，维护链表的开销)</td>
+<td>LinkedHashMap</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h2 id="Collections工具类"><a href="#Collections工具类" class="headerlink" title="Collections工具类"></a>Collections工具类</h2><blockquote>
+<p>线程安全的容器，java.util.concurrent里面的线程安全容器之外的</p>
+</blockquote>
+<p>这里提供了一系列的synchronized方法，比如</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">synchronizedList</span><span class="params">(List&lt;T&gt; list)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> (list <span class="keyword">instanceof</span> RandomAccess ?</span><br><span class="line">              <span class="keyword">new</span> SynchronizedRandomAccessList&lt;&gt;(list) :</span><br><span class="line">              <span class="keyword">new</span> SynchronizedList&lt;&gt;(list));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们完全可以使用类似的方法来实现基本的线程安全集合：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List ts = Collections.synchronizedList(<span class="keyword">new</span> ArrayList&lt;&gt;());</span><br></pre></td></tr></table></figure>
+
+<p>他的实现，基本就是将每个基本的方法，比如get，set，add之类，都通过synchronizd添加基本的同步支持，简单粗暴，这些都符合fail-fast行为，当发生意外的并发修改时，尽早抛出ConcurrentModifcationException异常，以避免不可预计的行为。</p>
+<blockquote>
+<p>算法排序</p>
+</blockquote>
+<ul>
+<li>要区别是Arrays.sort() 还是Collections.sort()（底层是调用Arrays.sort()）</li>
+<li>什么数据类型</li>
+<li>多大的数据集（太小的数据集，复杂排序是没有必要的，java会直接进行二分插入排序）</li>
+</ul>
+<p>1.对于原始数据类型，目前使用的是所谓的双轴快速排序（Dual-Pivot QuickSort），是一种改进的快速排序算法，早期版本是相对传统的快速排序。</p>
+<p>2.而对于对象数据类型，目前则是使用<a href="http://hg.openjdk.java.net/jdk/jdk/file/26ac622a4cab/src/java.base/share/classes/java/util/TimSort.java" target="_blank" rel="noopener">TimSort</a>，思想上也是一种归并和二分插入排序(binarySort)结合的优化排序算法。TimSort并不是Java的独创，简单说它的思路是查找 数据集中已经排好序的分区(这里叫run)，然后合并这些分区来达到排序的目的。</p>
+<p>3.Java 8引入了并行排序算法(直接使用parallelSort方法)，这是为了充分利用现代多核处理器的计算能力，底层实现基于fork-join框架。当处理的数据集比较小的时候，差距不明显，甚至还表现差一点;但是，当数据集增长到数万或百万以上时，提高就非常大了，具体还是取决处理器和系统环境</p>
+<p>利用PriorityBlockingQueue或Disruptor可实现基于任务优先级为调度策略的执行调度系统。</p>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><blockquote>
+<p>Hashtable,HashMap,TreeMap有什么不同？谈谈你对HashMap的掌握</p>
+</blockquote>
+<p>答：1.HashTable，HashMap，TreeMap都是常见的一些Map实现，是以键值对的形式存储和操作数据的容器类型。</p>
+<p>2.HashTable是早期Java类库提供的一一种哈希表的实现，本身是同步的，不支持null键和值，由于同步导致的性能开销，所以已经很少使用了。</p>
+<p>3.HashMap是应用更加广泛的哈希表的实现，行为上大致与HashTable一致，主要区别在于不是同步的，支持null键和值等，通常情况下，HashMap进行put或者get操作，可以达到常数时间的性能，所以它是绝大部分利用键值对存取的场景的首选，比如，实现一个用户id和用户信息对于的运行时存储结构。</p>
+<p>4.TreeMap则是基于红黑树的一种提供顺序访问的Map，和HashMap不同，它的get，put，remove之类的操作都是O(log(n))的时间复杂度，具体顺序可以由指定的Comparator来决定，或者根据键的自然顺序来判断</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>线程安全</th>
+<th>是否允许null</th>
+<th>通过Iterator遍历</th>
+<th>容量初始值和resize</th>
+<th>添加k-v的hash算法不同</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hashtable</td>
+<td>是</td>
+<td>都不允许为空</td>
+<td>是从后向前便利数组，再对数组具体某一项对应的链表，从表头开始进行遍历</td>
+<td>11，1+x^2</td>
+<td>直接使用key的hashCode</td>
+</tr>
+<tr>
+<td>HashMap</td>
+<td>否</td>
+<td>k，v都可为空</td>
+<td>是从前向后便利数组，再对数组具体某一项对应的链表，从表头开始进行遍历</td>
+<td>x^2</td>
+<td>自定义的hash算法</td>
+</tr>
+<tr>
+<td>TreeMap</td>
+<td>否</td>
+<td>k，v都可为空</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>一句话HashMap总结</p>
+</blockquote>
+<p>HashMap基于哈希思想，实现对数据的读写。当我们将键值对传递给put方法时，它调用对象的hashcode方法来计算hashcode，让后找到bucket位置来存储值对象，当获取对象时，通过键对象的equals方法找到正确的键值对，然后返回值对象。HashMap使用链表来解决碰撞问题，当发生了碰撞，对象将会存储在链表的下一个节点中，HashMap在每个节点中存储键值对对象。当两个不同的键值对的对象的hashcode相同时，它们会存储在同一个bucket位置的链表中可通过键值对对象的equals方法用来找到键值对，如果链表大小超过阈值，则链表会树化</p>
+<blockquote>
+<p>解决哈希冲突的常用方法有4种：</p>
+</blockquote>
+<ul>
+<li><p>开放定址法<br>基本思想是：当关键字key的哈希地址p=H（key）出现冲突时，以p为基础，产生另一个哈希地址p1，如果p1仍然冲突，再以p为基础，产生另一个哈希地址p2，…，直到找出一个不冲突的哈希地址pi ，将相应元素存入其中。</p>
+</li>
+<li><p>再哈希法<br>这种方法是同时构造多个不同的哈希函数：<br>Hi=RH1（key）  i=1，2，…，k<br>当哈希地址Hi=RH1（key）发生冲突时，再计算Hi=RH2（key）……，直到冲突不再产生。这种方法不易产生聚集，但增加了计算时间。</p>
+</li>
+<li><p>链地址法<br>这种方法的基本思想是将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。</p>
+</li>
+<li><p>建立公共溢出区<br>这种方法的基本思想是：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表</p>
+</li>
+</ul>
+<h1 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h1><blockquote>
+<p>ConcurrentHashMap是如何实现高效地线程安全</p>
+</blockquote>
+<p>尽管有Vector，stack，但是在性能方面远不尽如意。Java提供了并发包，为高度并发需求提供了更加全面的工具的支持。</p>
+<p>java提供了不同层面的线程安全的支持再传统集合框架内部，除了HashTable等同步容器，还提供了所谓的同步包装器（Synchronized Wrapper），我们可以调用Collections工具类提供的包装方法，来获取一个同步的包装容器如：Collection.synchronizedMap，但它们都是利用非常粗粒度的同步方式，在高并发的情况下，性能比较低下。另外更加普遍的选择是利用并发包提供的线程安全容器类，它提供了：</p>
+<ul>
+<li>各种并发容器，比如ConcurrentHashMap，CopyOnWriteArrayList</li>
+<li>各种线程安全的队列（Queue/Deque），如ArrayBlockingQueue，SynchronousQueue</li>
+<li>各种有序容器的线程安全版本等</li>
+</ul>
+<p>具体保证线程安全的方式，包括从简单的synchronize方式，到基于更加精细化的，比如基于分离锁实现的ConcurrentHashMap等并发实现等，具体选择还是要根据场景需求</p>
+<h2 id="ConcurrentHashMap分析"><a href="#ConcurrentHashMap分析" class="headerlink" title="ConcurrentHashMap分析"></a>ConcurrentHashMap分析</h2><ul>
+<li>分析结构</li>
+<li>实现机制</li>
+<li>不同版本的区别</li>
+</ul>
+<blockquote>
+<p>早期的ConcurrentHashMap是基于</p>
+</blockquote>
+<ul>
+<li><p>分离锁</p>
+<p>也就是内部进行分段（segment），里面则是HashEntry的数组，和HashMap类似，哈希相同的条目也是以链表的形式存放</p>
+</li>
+<li><p>HashEntry内部使用volatie的value字段保证可见性，</p>
+<p>也利用了不可变对象的机制以改进Unsafe提供的底层能力直接去完成部分操作，以最优化性能，毕竟Unsafe中的很多操作都是Jvm intrinsic优化过的</p>
+</li>
+</ul>
+<blockquote>
+<p>结构</p>
+</blockquote>
+<p>在构造的时候，segment 的数量由所谓的concurrentcyLevel决定，默认是16，也可以在相应构造函数直接指定。注意，Java需要它是2的幂数值，如果输入是类似15这种非幂 值，会被自动调整到16之类2的幂数值。</p>
+<blockquote>
+<p>不同版本的区别</p>
+</blockquote>
+<p>1.7</p>
+<p>put加锁</p>
+<p>通过分段加锁segment，一个HashMap里有有若干个segment，每个segment里有若干个桶，桶里存放k-v形式的链表，put数据时通过key的哈希得到该元素要添加到segment，然后对segment进行加锁，然后在哈希，计算得到给元素要添加到的桶，然后遍历桶中的链表，替换或新增节点到桶中</p>
+<p>size</p>
+<p>分段计算两次，两次结果相同则返回，否则对所有段加锁重新计算</p>
+<p>1.8</p>
+<p>put CAS加锁</p>
+<p>1.8中不依赖于segment加锁，segment数量与桶中数量一致</p>
+<p>首先判断容器是否为空，为空则进行初始化利用volatile的sizeCtl作为互斥手段，如果发现竞争性的初始化，就暂停在哪里，等待条件恢复，否则利用CAS设置排他标志（U.compareAndSwapInt(this, SIZECTL, sc, -1)）；否则重试对key的hash计算得到该key存放的桶位置，判断该桶是否为空，为空则利用CAS设置新节点否则使用synchronize加锁，遍历桶中数据，替换或新增节点到桶中最后判断是否需要树化，转换之前判断是否需要扩容。</p>
+<p>size</p>
+<p>利用LongAdd累计计算</p>
+<blockquote>
+<p>CAS</p>
+</blockquote>
+<p>CAS操作包含三个操作数–内存位置（V），预期原值（A）和新值（B）</p>
+<p>如果内存位置的值与预期原值匹配，那么处理器会自动将该位置更新为新值，否则处理器不做任何操作。无论哪种情况，它都会在CAS指令之前返回该位置的值。（在CAS的一些特殊情况下将仅返回CAS是否成功，而不是提取当前值。）CAS有效地说明了我认为位置V应该包含值A；如果包含该值，则将B放到这个位置；否则，不需要更该位置，只告诉我这个位置现在的值即可。</p>
+<blockquote>
+<p>reentrantlock底层实现</p>
+</blockquote>
+<p>构造器分为公平锁(排队)、非公平锁(插队)，默认为非公平锁      公平锁会消耗更多性能</p>
+<p>lock()获取锁：是基于CAS</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (compareAndSetState(<span class="number">0</span>, <span class="number">1</span>))     <span class="comment">//有一个state状态值</span></span><br><span class="line">    	setExclusiveOwnerThread(Thread.currentThread());</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	acquire(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>compareAndSetState会判断内存位置的值是否为0，是则把值替换为1，并且当前线程获取锁成功，拿到当前线程；这样后来获取锁的线程就会进入else：acquire（1）过程为等待线程进入队列，在进入队列之前也会多次尝试再次获取锁且都是基于cas操作，成功则返回，失败则进入队列等待。</p>
+<p>unlock()释放锁：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">release</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (tryRelease(arg)) &#123;</span><br><span class="line">        Node h = head;</span><br><span class="line">        <span class="keyword">if</span> (h != <span class="keyword">null</span> &amp;&amp; h.waitStatus != <span class="number">0</span>)</span><br><span class="line">            unparkSuccessor(h);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 释放当前线程占用的锁</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> releases</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 是否释放成功</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">tryRelease</span><span class="params">(<span class="keyword">int</span> releases)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 计算释放后state值</span></span><br><span class="line">    <span class="keyword">int</span> c = getState() - releases;</span><br><span class="line">    <span class="comment">// 如果不是当前线程占用锁,那么抛出异常</span></span><br><span class="line">    <span class="keyword">if</span> (Thread.currentThread() != getExclusiveOwnerThread())</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalMonitorStateException();</span><br><span class="line">    <span class="keyword">boolean</span> free = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 锁被重入次数为0,表示释放成功</span></span><br><span class="line">        free = <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">// 清空独占线程</span></span><br><span class="line">        setExclusiveOwnerThread(<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 更新state值</span></span><br><span class="line">    setState(c);</span><br><span class="line">    <span class="keyword">return</span> free;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里入参为1.tryRelease的过程为：当前释放锁的线程若不持有锁，则抛出异常。若持有锁，计算释放后的state值是否为0，若为0表示锁已经被成功释放，并且清空独占线程，最后更新state值，返回free</p>
+<hr>
+<p>公平锁与非公平锁不同之处 在于，公平锁在获取的锁的时候，不会先去检查state状态，而是直接执行acquire(1)，这里不再赘述。</p>
+<p>在ReetrantLook的tryLock（long timeout， TimeUtil unit）提供了超时获取锁的功能，它的语义是在指定的时间内如果获取到锁就返回true，获取不到则返回false。这种机制避免了线程无限期的等待锁释放，那么超时的功能是怎么实现的呢？我们还是用非公平锁为例一探究竟</p>
+<p>Thread.interrupted();//中断线程</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">ankuo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2017/09/08/【面试】集合面试题整理/">http://yoursite.com/2017/09/08/【面试】集合面试题整理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/面试/">面试    </a></div><div class="post_share"><div class="social-share" data-image="https://s2.ax1x.com/2019/09/18/nHxh7j.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-buttom"><i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lozad post-qr-code__img" src="/img/wechat.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lozad post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2017/09/15/【面试】IO框架面试题整理/"><img class="prev_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHx5As.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>【面试】IO框架面试题整理</span></div></a></div><div class="next-post pull-right"><a href="/2017/09/08/【面试】常见基础面试题整理/"><img class="next_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxINn.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>【面试】常见基础面试题整理</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2017/09/07/【面试】Exception和Error/" title="【面试】Exception和Error"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxjHJ.jpg"><div class="relatedPosts_title">【面试】Exception和Error</div></a></div><div class="relatedPosts_item"><a href="/2019/09/18/【面试】Java并发多线程整理/" title="【面试】Java并发多线程整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxqjU.jpg"><div class="relatedPosts_title">【面试】Java并发多线程整理</div></a></div><div class="relatedPosts_item"><a href="/2017/09/08/【面试】常见基础面试题整理/" title="【面试】常见基础面试题整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxINn.jpg"><div class="relatedPosts_title">【面试】常见基础面试题整理</div></a></div><div class="relatedPosts_item"><a href="/2017/09/15/【面试】IO框架面试题整理/" title="【面试】IO框架面试题整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHx5As.png"><div class="relatedPosts_title">【面试】IO框架面试题整理</div></a></div><div class="relatedPosts_item"><a href="/2017/09/16/【面试】接口抽象类和设计模式整理/" title="【面试】接口抽象类和设计模式整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxbcT.jpg"><div class="relatedPosts_title">【面试】接口抽象类和设计模式整理</div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> Comment</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'http://yoursite.com/2017/09/08/【面试】集合面试题整理/';
+  this.page.identifier = '2017/09/08/【面试】集合面试题整理/';
+  this.page.title = '【面试】集合面试题整理';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;1927 - 2019 By ankuo</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://ankuo.github.io">blog</a>!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><div id="post_bottom"><div id="post_bottom_items"><a id="mobile_to_comment" href="#post-comment"><i class="mobile_scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">Catalog</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#Collection"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">Collection</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#List"><span class="toc_mobile_items-number">1.1.</span> <span class="toc_mobile_items-text">List</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#Set"><span class="toc_mobile_items-number">1.2.</span> <span class="toc_mobile_items-text">Set</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#Collections工具类"><span class="toc_mobile_items-number">1.3.</span> <span class="toc_mobile_items-text">Collections工具类</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#Map"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">Map</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#ConcurrentHashMap"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">ConcurrentHashMap</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#ConcurrentHashMap分析"><span class="toc_mobile_items-number">3.1.</span> <span class="toc_mobile_items-text">ConcurrentHashMap分析</span></a></li></ol></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script id="ribbon" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/js/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPoss":0.5,"vHeadPos":0.5,"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"superSample":2,"width":200,"height":420,"position":"left","hOffset":0,"vOffset":-20},"log":false});</script></body></html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>【面试】常见基础面试题整理 | 岸阔</title><meta name="description" content="【面试】常见基础面试题整理"><meta name="keywords" content="面试"><meta name="author" content="ankuo"><meta name="copyright" content="ankuo"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://yoursite.com/2017/09/08/【面试】常见基础面试题整理/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="【面试】常见基础面试题整理"><meta name="twitter:description" content="【面试】常见基础面试题整理"><meta name="twitter:image" content="https://s2.ax1x.com/2019/09/18/nHxINn.jpg"><meta property="og:type" content="article"><meta property="og:title" content="【面试】常见基础面试题整理"><meta property="og:url" content="http://yoursite.com/2017/09/08/【面试】常见基础面试题整理/"><meta property="og:site_name" content="岸阔"><meta property="og:description" content="【面试】常见基础面试题整理"><meta property="og:image" content="https://s2.ax1x.com/2019/09/18/nHxINn.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="【面试】集合面试题整理" href="http://yoursite.com/2017/09/08/【面试】集合面试题整理/"><link rel="next" title="【面试】Exception和Error" href="http://yoursite.com/2017/09/07/【面试】Exception和Error/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'true',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java反射机制"><span class="toc-number">1.</span> <span class="toc-text">Java反射机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动态代理"><span class="toc-number">2.</span> <span class="toc-text">动态代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK-动态代理和cglib的区别与优势"><span class="toc-number">2.1.</span> <span class="toc-text">JDK 动态代理和cglib的区别与优势</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#int和Integer区别"><span class="toc-number">3.</span> <span class="toc-text">int和Integer区别</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://s2.ax1x.com/2019/09/18/nHxINn.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">岸阔</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><div class="menu_mask"></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item text-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item text-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">3</div></a></div></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">【面试】常见基础面试题整理</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2017-09-08<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> Updated 2019-09-18</time></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p>Java反射机制，动态代理的原理</p>
+<h1 id="Java反射机制"><a href="#Java反射机制" class="headerlink" title="Java反射机制"></a>Java反射机制</h1><p>反射机制是java提供的一种基础的功能，赋予程序运行时自省的能力。通过反射我们可以直接操作类或者对象，比如获取某个对象的类定义，获取类生命的熟悉和方法，调用方法和构造对象，甚至可以在运行时修改类定义。</p>
+<h1 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h1><p>动态代理是一种方便运行时构建代理，动态处理代理方法调用的机制，很多场景都是利用类似机制做到的，比如用来包装RPC调用，面向切面编程。实现动态代理的方法有很多，比如JDK自身提供的动态代理，就是主要用到了上面的反射机制。还有其他实现方式，比如可以利用传说中更高性能的字节码操作机制，类似ASM，cglib（基于ASM），javassist</p>
+<h2 id="JDK-动态代理和cglib的区别与优势"><a href="#JDK-动态代理和cglib的区别与优势" class="headerlink" title="JDK 动态代理和cglib的区别与优势"></a>JDK 动态代理和cglib的区别与优势</h2><p>JDK Proxy的优势:</p>
+<ul>
+<li><p>最小化依赖关系，减少依赖意味着简化开发和维护，JDK本身的支持，可能比cglib更加可靠。 </p>
+</li>
+<li><p>平滑进行JDK版本升级，而字节码类库通常需要进行更新以保证在新版Java上能够使用。 </p>
+</li>
+<li><p>代码实现简单。 </p>
+</li>
+</ul>
+<p>cglib 的优势：</p>
+<ul>
+<li>有的时候调用目标可能不便实现额外接口，从某种角度看，限定调用者实现接口是有些侵入性的实践，类似cglib动态代理就没有这种限制。</li>
+<li>只操作我们关心的类，而不必为其他相关类增加工作量。</li>
+<li>高性能。</li>
+</ul>
+<blockquote>
+<p>补充：</p>
+<p>另外，从性能角度，记得有人曾经得出结论说JDK Proxy比cglib或者Javassist慢几十倍。坦白说，不去争论具体的benchmark细节，在主流JDK版本中，JDK Proxy在典型场景可以提供对等的性能水平，数量级的差距基本上不是广泛存在的。而且，反射机制性能在现代JDK中，自身已经得到了极大的改进和优化，同时，JDK很多功能也不完全是反射，同样使用了ASM进行字节码操作。 我们在选型中，性能未必是唯一考量，<strong>可靠性、可维护性、编程工作量</strong>等往往是更主要的考虑因素，毕竟标准类库和反射编程的门槛要低得多，代码量也是更加可控的，如果我们比较下不同开源项目在动态代理开发上的投入，也能看到这一点。</p>
+</blockquote>
+<h1 id="int和Integer区别"><a href="#int和Integer区别" class="headerlink" title="int和Integer区别"></a>int和Integer区别</h1><p>java的基本数据类型int和其包装类Integer有什么区别，可以从以下几个方面去回答：</p>
+<ol>
+<li>Integer是int的包装类，在jdk1.5中引入了自动拆箱和装箱的功能，java可根据上下文自动的将int和字符串之间转换</li>
+<li>jdk5之后由新增了静态工厂方法valueOf，在调用它的时候会利用一个新引入的缓存机制，带来明显的性能改进，这个缓存默认缓存了-128～127之间的数字</li>
+</ol>
+<blockquote>
+<p> 对此可又以下疑惑</p>
+<ol>
+<li>自动装箱和拆箱是发生在编译阶段还是运行阶段</li>
+<li>静态工厂方法valueOf会使用缓存机制，那么自动装箱时会使用到缓存机制么</li>
+<li>似乎java对象也很高效为什么还要使用基本数据类型，</li>
+<li>Integer源码中的一些类或某些方法的设计要点</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>自动拆箱和装箱算是语法糖了，也就是java平台会自动进行一些转换，保证不同的写法在运行时等价，它们发生在编译阶段，也就是生成的字节码是一致的。</p>
+</li>
+<li><p>整数通过javac替我们自动把装箱转换成Integer.valueOf()，把拆箱替换为Integer.intValue()，自动装箱和拆箱时会用缓存。反编译即可得到结论。</p>
+</li>
+</ol>
+<p>ps：这种缓存机制并不是Integer才有同样存在于其他的一些包装类，比如Boolean，Short，Byte，Character</p>
+<ol start="3">
+<li>创建10万个对象会和创建10万个基本数据类型不是一个数量级的，不光是内存使用和处理速度，光是对象头的空间就占用就是数量级的差距了。</li>
+</ol>
+<p>ps：对象在内存中存储的布局可以分为3个区域：对象头，实例数据和对其填充</p>
+<ol start="4">
+<li>首先：Integer 的源码主要包括各种基础的常量，比如最大最小值，位数等，还有各种静态工厂方法valueOf()；获取环境变量数值的方法；各种转换方法，比如转换为不同进制的字符串，比如8进制，活着反过来的解析方法等。</li>
+</ol>
+<p>ps: Integer的缓存范围虽说是-128～127，但是在特别的应用场景，比如我们明确知道应用会频繁使用更大的数值，这时候应该怎么办呢？缓存上限制是可以根据需要调整的，JVM提供了参数设置</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">-XX:AutoBoxCacheMax=N</span><br></pre></td></tr></table></figure>
+
+<p>其次：String字符串在设计的时候 是被final修饰是不可变的，保证了基本信息的安全和并发编程中的线程安全。如果你去看包装类里存储的数值的成员变量value，会发现不管是Integer和Boolean等，都是被声明为private final，所以，它们同样是不可变类型</p>
+<blockquote>
+<p>基本数据类型的变量，线程安全问题</p>
+</blockquote>
+<p>1.原始数据类型的变量，显然需要使用并发相关的手段，才能保证线程安全，如有需要，可以选择使用类似AtomicInteger，AtomicLong这样的线程安全类</p>
+<p>2.对于比较宽的数据类型，比如float，double，甚至不能保证更新操作的原子性，可能会出现程序读取到只更新一半数据位的数值！</p>
+<blockquote>
+<p>基本类型和引用类型的局限性</p>
+</blockquote>
+<p>1.原始数据类型和Java泛型并不能配合使用。因为java的泛型在某种程度上可以算是伪泛型，它是完全一种编译期的技巧，java编译阶段会自动将类型转换成对应的特定类型，这就决定了使用泛型，必须保证相应类型可以转换为Obejct</p>
+<p>2.无法高效的表达数据，也不便于表达复杂的数据结构，比如vector和tuple</p>
+<p>3.java对象都是引用类型，如果是一个原始数据类型的数组，它在内存是一段连续的内存，而对象数组则不然，数据存储的是引用，对象往往是分散在堆的不同的位置这种设计虽然带来了极大的灵活性，但是也导致了数据操作的低效，尤其是无法充分利用现代CPU缓存机制</p>
+<blockquote>
+<p>Ps:</p>
+<p>节选自《深入理解JAVA虚拟机》: 在HotSpot虚拟机中，对象在内存中存储的布局可以分为3块区域:对象头(Header)、实例数据(Instance Data)和对齐填充(Padding)。</p>
+<p>HotSpot虚拟机的对象头包括两部分信息，第一部分用于存储对象自身的运行时数据，如哈希码(HashCode)、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳等，这部 分数据的长度在32位和64位的虚拟机(未开启压缩指针)中分别为32bit和64bit，官方称它为”Mark Word”。</p>
+<p>对象头的另外一部分是类型指针，即对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例。并不是所有的虚拟机实现都必须在对象数据上保留类型指针，换句话 说，查找对象的元数据信息并不一定要经过对象本身，这点将在2.3.3节讨论。另外，如果对象是一个Java数组，那在对象头中还必须有一块用于记录数组长度的数据，因为虚拟机可以通过普 通Java对象的元数据信息确定Java对象的大小，但是从数组的元数据中却无法确定数组的大小。</p>
+<p>接下来的实例数据部分是对象真正存储的有效信息，也是在程序代码中所定义的各种类型的字段内容。无论是从父类继承下来的，还是在子类中定义的，都需要记录起来。 第三部分对齐填充并不是必然存在的，也没有特别的含义，它仅仅起着占位符的作用。由于HotSpot VM的自动内存管理系统要求对象起始地址必须是8字节的整数倍，换句话说，就是对象的大</p>
+<p>小必须是8字节的整数倍。</p>
+</blockquote>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">ankuo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2017/09/08/【面试】常见基础面试题整理/">http://yoursite.com/2017/09/08/【面试】常见基础面试题整理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/面试/">面试    </a></div><div class="post_share"><div class="social-share" data-image="https://s2.ax1x.com/2019/09/18/nHxINn.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-buttom"><i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lozad post-qr-code__img" src="/img/wechat.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lozad post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2017/09/08/【面试】集合面试题整理/"><img class="prev_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxh7j.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>【面试】集合面试题整理</span></div></a></div><div class="next-post pull-right"><a href="/2017/09/07/【面试】Exception和Error/"><img class="next_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxjHJ.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>【面试】Exception和Error</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2017/09/07/【面试】Exception和Error/" title="【面试】Exception和Error"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxjHJ.jpg"><div class="relatedPosts_title">【面试】Exception和Error</div></a></div><div class="relatedPosts_item"><a href="/2019/09/18/【面试】Java并发多线程整理/" title="【面试】Java并发多线程整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxqjU.jpg"><div class="relatedPosts_title">【面试】Java并发多线程整理</div></a></div><div class="relatedPosts_item"><a href="/2017/09/15/【面试】IO框架面试题整理/" title="【面试】IO框架面试题整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHx5As.png"><div class="relatedPosts_title">【面试】IO框架面试题整理</div></a></div><div class="relatedPosts_item"><a href="/2017/09/16/【面试】接口抽象类和设计模式整理/" title="【面试】接口抽象类和设计模式整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxbcT.jpg"><div class="relatedPosts_title">【面试】接口抽象类和设计模式整理</div></a></div><div class="relatedPosts_item"><a href="/2017/09/08/【面试】集合面试题整理/" title="【面试】集合面试题整理"><img class="relatedPosts_cover lozad" data-src="https://s2.ax1x.com/2019/09/18/nHxh7j.jpg"><div class="relatedPosts_title">【面试】集合面试题整理</div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> Comment</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'http://yoursite.com/2017/09/08/【面试】常见基础面试题整理/';
+  this.page.identifier = '2017/09/08/【面试】常见基础面试题整理/';
+  this.page.title = '【面试】常见基础面试题整理';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;1927 - 2019 By ankuo</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://ankuo.github.io">blog</a>!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><div id="post_bottom"><div id="post_bottom_items"><a id="mobile_to_comment" href="#post-comment"><i class="mobile_scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">Catalog</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#Java反射机制"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">Java反射机制</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#动态代理"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">动态代理</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#JDK-动态代理和cglib的区别与优势"><span class="toc_mobile_items-number">2.1.</span> <span class="toc_mobile_items-text">JDK 动态代理和cglib的区别与优势</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#int和Integer区别"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">int和Integer区别</span></a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script id="ribbon" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/js/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPoss":0.5,"vHeadPos":0.5,"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"superSample":2,"width":200,"height":420,"position":"left","hOffset":0,"vOffset":-20},"log":false});</script></body></html>
